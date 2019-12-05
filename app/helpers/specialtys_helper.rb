@@ -1,0 +1,2 @@
+module SpecialtysHelper
+end
