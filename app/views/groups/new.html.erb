@@ -1,0 +1,6 @@
+<p>Creez votre propre groupe !</p>
+<%= form_for :users, :url => { :action => "create"} do %>
+ <span>Name</span>         <%= text_field_tag(:group_name) %><br>
+ <span>Déscription</span>       <%= text_field_tag(:group_body) %>
+  <%= submit_tag("s'inscrire") %>
+<% end %>
