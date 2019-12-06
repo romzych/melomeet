@@ -4,7 +4,8 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :first_name
       t.string :last_name
       t.integer :speciality_id
-
+      t.string :speciality_1
+      t.string :speciality_2
       t.timestamps
     end
   end
