@@ -10,6 +10,10 @@
 require 'faker'
 User.destroy_all
 8.times do |t|
-    user = User.create(email: "#{Faker::Name.first_name}@yopmail.com", password: "azerty123")
+    user = User.create(email: "#{Faker::Name.first_name}@yopmail.com", password: "azerty123", speciality_1: "Beatmaker")
+end
+puts "8 users et items on été créé"
+8.times do |t|
+    user = User.create(email: "#{Faker::Name.first_name}@yopmail.com", password: "azerty123", speciality_1: "Singer")
 end
 puts "8 users et items on été créé"

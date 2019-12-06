@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 2019_12_05_120203) do
     t.string "first_name"
     t.string "last_name"
     t.integer "speciality_id"
+    t.string "speciality_1"
+    t.string "speciality_2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
