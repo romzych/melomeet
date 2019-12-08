@@ -1,0 +1,22 @@
+<%= form_for @user, url: wizard_path, method: :put do |f| %>
+<div class="field">
+	<%= f.label :first_name %><br/>
+	<%= f.text_field :first_name %>
+</div>
+
+<div class="field">
+	<%= f.label :last_name %><br/>
+	<%= f.text_field :last_name %>
+</div>
+
+<div class="field">
+	<%= f.label :speciality_1 %><br/>
+	<%= f.text_field :speciality_1 %>
+</div>
+
+<div class="field">
+	<%= f.label :speciality_2 %><br/>
+	<%= f.text_field :speciality_2 %>
+</div>
+<%= f.submit "Update" %>
+<% end %>
