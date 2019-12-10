@@ -4,6 +4,13 @@ class UsersController < ApplicationController
     @beatmaker      = []
     @singer   = []
     @guitarist  = []
+    @pianist  = []
+    @rapper  = []
+    @producer  = []
+    @sound_engineer  = []
+    @writter  = []
+    @bass_player  = []
+    @drummer  = []
     User.all.each do |user|
       @all_artists << user
     end
@@ -12,8 +19,24 @@ class UsersController < ApplicationController
         @beatmaker << user
       elsif user.speciality_1  == "Singer"
         @singer << user
-      else
+      elsif user.speciality_1  == "Guitarist"
         @guitarist << user
+      elsif user.speciality_1  == "Pianist" 
+        @pianist << user
+      elsif user.speciality_1  == "Rapper"
+        @rapper << user
+      elsif user.speciality_1  == "Producer"
+        @producer << user 
+      elsif user.speciality_1  == "Sound engineer"
+        @sound_engineer << user                      	   
+      elsif user.speciality_1  == "Writter" 
+        @writter << user
+      elsif user.speciality_1  == "Bass player"
+        @bass_player << user
+      elsif user.speciality_1  == "Drummer" 
+        @drummer << user
+       else
+       @all_artists << user                               
       end
     end
 	end

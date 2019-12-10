@@ -1,5 +1,5 @@
 class SpecialtysController < ApplicationController
-		def index
+	def index
 		
 	end
 

@@ -10,13 +10,20 @@
 </div>
 
 <div class="field">
-	<%= f.label :speciality_1 %><br/>
-	<%= f.text_field :speciality_1 %>
+<%= f.select :speciality_1, options_for_select([
+  ["Select One", ""], 
+  "Beatmaker", 
+  "Singer", 
+  "Guitarist", 
+  "Pianist", 
+  "Rapper",
+  "Producer",
+  "Sound engineer",
+  "writter",
+  "Bass player",
+  "Drummer"]), 
+  {}, { class: "form form-group form-control" } %>
 </div>
 
-<div class="field">
-	<%= f.label :speciality_2 %><br/>
-	<%= f.text_field :speciality_2 %>
-</div>
 <%= f.submit "Update" %>
 <% end %>

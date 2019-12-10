@@ -2,9 +2,26 @@
   <div class="col-4">
     <div class="list-group" id="list-tab" role="tablist">
       <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">ALL</a>
+     
       <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">SINGER</a>
+     
       <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">BEATMAKER</a>
+     
       <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">GUITARIST</a>
+      
+      <a class="list-group-item list-group-item-action" id="list-pianist-list" data-toggle="list" href="#list-pianist" role="tab" aria-controls="settings">PIANIST</a>
+      
+      <a class="list-group-item list-group-item-action" id="list-rapper-list" data-toggle="list" href="#list-rapper" role="tab" aria-controls="settings">RAPPER</a>
+      
+      <a class="list-group-item list-group-item-action" id="list-producer-list" data-toggle="list" href="#list-producer" role="tab" aria-controls="settings">PRODUCER</a>
+     
+      <a class="list-group-item list-group-item-action" id="list-sound_engineer-list" data-toggle="list" href="#list-sound_engineer" role="tab" aria-controls="settings">SOUND ENGINEER</a>
+     
+      <a class="list-group-item list-group-item-action" id="list-writter-list" data-toggle="list" href="#list-writter" role="tab" aria-controls="settings">WRITTER</a>
+     
+      <a class="list-group-item list-group-item-action" id="list-bass_player-list" data-toggle="list" href="#list-bass_player" role="tab" aria-controls="settings">BASS PLAYER</a>
+     
+      <a class="list-group-item list-group-item-action" id="list-drummer-list" data-toggle="list" href="#list-drummer" role="tab" aria-controls="settings">DRUMMER</a>
     </div>
   </div>
   <div class="col-8">
@@ -50,6 +67,90 @@
       
 
      <% @guitarist.each do |user| %>
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= user.first_name %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= user.speciality_1 %></h6>
+    <p class="card-text"><%= user.email %></p>
+  </div>
+</div> <% end %>
+
+      </div>
+            <div class="tab-pane fade" id="list-pianist" role="tabpanel" aria-labelledby="list-pianist-list">
+        
+
+     <% @pianist.each do |user| %>
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= user.first_name %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= user.speciality_1 %></h6>
+    <p class="card-text"><%= user.email %></p>
+  </div>
+</div> <% end %>
+
+      </div>
+          <div class="tab-pane fade" id="list-rapper" role="tabpanel" aria-labelledby="list-rapper-list">
+      <% @rapper.each do |user| %>
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= user.first_name %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= user.speciality_1 %></h6>
+    <p class="card-text"><%= user.email %></p>
+  </div>
+</div> <% end %>
+
+      </div>
+
+      <div class="tab-pane fade" id="list-producer" role="tabpanel" aria-labelledby="list-producer-list">
+      <% @producer.each do |user| %>
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= user.first_name %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= user.speciality_1 %></h6>
+    <p class="card-text"><%= user.email %></p>
+  </div>
+</div> <% end %>
+
+      </div>
+
+      <div class="tab-pane fade" id="list-sound_engineer" role="tabpanel" aria-labelledby="list-sound_engineer-list">
+      <% @sound_engineer.each do |user| %>
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= user.first_name %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= user.speciality_1 %></h6>
+    <p class="card-text"><%= user.email %></p>
+  </div>
+</div> <% end %>
+
+      </div>
+
+<div class="tab-pane fade" id="list-writter" role="tabpanel" aria-labelledby="list-writter-list">
+      <% @writter.each do |user| %>
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= user.first_name %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= user.speciality_1 %></h6>
+    <p class="card-text"><%= user.email %></p>
+  </div>
+</div> <% end %>
+
+      </div>
+
+      <div class="tab-pane fade" id="list-bass_player" role="tabpanel" aria-labelledby="list-bass_player-list">
+      <% @bass_player.each do |user| %>
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= user.first_name %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= user.speciality_1 %></h6>
+    <p class="card-text"><%= user.email %></p>
+  </div>
+</div> <% end %>
+
+      </div>
+
+      <div class="tab-pane fade" id="list-drummer" role="tabpanel" aria-labelledby="list-drummer-list">
+      <% @drummer.each do |user| %>
   <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title"><%= user.first_name %></h5>
