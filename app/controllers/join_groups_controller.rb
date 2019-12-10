@@ -1,5 +1,5 @@
 class JoinGroupsController < ApplicationController
-		def index
+	def index
 		
 	end
 
