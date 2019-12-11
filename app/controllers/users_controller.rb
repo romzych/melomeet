@@ -42,7 +42,11 @@ class UsersController < ApplicationController
 	end
 
 	def show
-	 @user = User.find(params[:id])
+   @user = User.find(params[:id])
+   puts "#" * 60
+  #  @my_group = 
+   puts Group.find_by(name: "Migos")
+   puts "#" * 60
 	end
 
 	def new
