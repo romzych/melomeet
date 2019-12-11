@@ -1,28 +1,7 @@
-
-<%= form_for(@group) do |f| %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </div>
-
-  <div class="field">
-<%= f.select :group_spe, options_for_select([
-  ["Select One", ""], 
-  "Rap/Trap/Drill/Alternatif/Hip-Hop", 
-  "Rock/Alternatif/Pop/Metal", 
-  "Pop", 
-  "RnB",
-  "Electro"]), 
-  {}, { class: "form form-group form-control" } %>
-</div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+ <p>Creez votre propre groupe !</p>
+<%= form_for :users, :url => { :action => "create"} do %>
+ <span>Name</span>         <%= text_field_tag(:group_name) %><br>
+ <span>Déscription</span>       <%= text_field_tag(:group_body) %>
+                            
+  <%= submit_tag("s'inscrire") %>
+<% end %> 

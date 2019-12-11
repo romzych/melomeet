@@ -36,7 +36,7 @@ class UsersController < ApplicationController
       elsif user.speciality_1  == "Drummer" 
         @drummer << user
        else
-       @all_artists << user                               
+                                      
       end
     end
 	end

@@ -12,15 +12,15 @@ class GroupsController < ApplicationController
 		@all_groups << group
 	end 
 	Group.all.each do |group|
-		if group.group_spe == "Rap/Trap/Drill/Alternatif/Hip-Hop"
+		if group.spe == "Rap/Trap/Drill/Alternatif/Hip-Hop"
 			@rap << group
-		elsif group.group_spe == "Rock/Alternatif/Pop/Metal"
+		elsif group.spe == "Rock/Alternatif/Pop/Metal"
 			@rock << group
-	    elsif group.group_spe == "Pop"
+	    elsif group.spe == "Pop"
 			@pop << group
-		elsif group.group_spe == "RnB"
+		elsif group.spe == "RnB"
 			@rnb << group
-		elsif group.group_spe == "Electro"
+		elsif group.spe == "Electro"
 			@electro << group
 				
 		end			
@@ -36,7 +36,7 @@ class GroupsController < ApplicationController
 	end
 
 	def create
-    @group = Group.new(admin: current_user, name: params[:group_name], body: params[:group_body]) 
+    @group = Group.new(admin: current_user, name: params[:group_name], body: params[:group_body], spe: params[:group_spe]) 
     if @group.save # essaie de sauvegarder en base @group
       redirect_to group_path(@group.id)
     else
