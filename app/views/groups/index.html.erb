@@ -1,21 +1,92 @@
-<a href="<%= new_group_path %>">Création d'un groupe</a>
-
-<div class="container">
-    <div class="row">
-      <% @all_group.each do |group| %>
-      <div class="col-md-4 col-sm-12">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">Nom : <%= group.name %></h4>
-            <p class="card-text">Déscription :</p>
-            <p class="card-text">
-              <%= group.body %></p>
-            <div class="buy d-flex justify-content-between align-items-center">
-                <a href="<%= group_path(group.id) %>" class="btn btn-secondary mt-3"> Voir le groupe</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <% end %>
+<div class="row">
+  <div class="col-4">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">ALL GROUPS</a>
+      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Rap (Trap, Drill, Alternatif, Hip-Hop)</a>
+      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">ROCK (Alternatif, Pop-Rock, Metal)</a>
+      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">POP</a>
+      <a class="list-group-item list-group-item-action" id="list-rnb-list" data-toggle="list" href="#list-rnb" role="tab" aria-controls="rnb">RnB</a>
+      <a class="list-group-item list-group-item-action" id="list-electro-list" data-toggle="list" href="#list-electro" role="tab" aria-controls="electro">ELECTRO</a>
     </div>
   </div>
+  <div class="col-8">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+        <% @all_groups.each do |group| %>
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= group.name %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= group.group_spe %></h6>
+    <p class="card-text"><%= group.body %></p>
+    <a class="btn btn-secondary btn-lg" role="button" <%= link_to "View",group_path(group.id) %></a>
+  </div>
+</div> <% end %>
+      </div>
+
+
+      <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+        <% @rap.each do |group| %>
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= group.name %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= group.group_spe%></h6>
+    <p class="card-text"><%= group.body %></p>
+    <a class="btn btn-secondary btn-lg" role="button" <%= link_to "View", group_path(group.id) %></a>
+  </div>
+</div> <% end %>
+      </div>
+
+
+      <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+        <% @rock.each do |group| %>
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= group.name %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= group.group_spe%></h6>
+    <p class="card-text"><%= group.body %></p>
+    <a class="btn btn-secondary btn-lg" role="button" <%= link_to "View", group_path(group.id) %></a>
+  </div>
+</div> <% end %>
+      </div>
+
+
+      <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+        <% @pop.each do |group| %>
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= group.name %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= group.group_spe%></h6>
+    <p class="card-text"><%= group.body %></p>
+    <a class="btn btn-secondary btn-lg" role="button" <%= link_to "View", group_path(group.id) %></a>
+  </div>
+</div> <% end %>
+      </div>
+
+
+      <div class="tab-pane fade" id="list-rnb" role="tabpanel" aria-labelledby="list-rnb-list">
+        <% @rnb.each do |group| %>
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= group.name %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= group.group_spe%></h6>
+    <p class="card-text"><%= group.body %></p>
+    <a class="btn btn-secondary btn-lg" role="button" <%= link_to "View", group_path(group.id) %></a>
+  </div>
+</div> <% end %>
+      </div>
+
+
+      <div class="tab-pane fade" id="list-electro" role="tabpanel" aria-labelledby="list-electro-list"><% @electro.each do |group| %>
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= group.name %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= group.group_spe%></h6>
+    <p class="card-text"><%= group.body %></p>
+    <a class="btn btn-secondary btn-lg" role="button" <%= link_to "View", group_path(group.id) %>d</a>
+  </div>
+</div> <% end %></div>
+
+
+    </div>
+  </div>
+</div>
