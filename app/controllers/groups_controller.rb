@@ -11,6 +11,12 @@ class GroupsController < ApplicationController
 
 	def show
 		@group = Group.find(params[:id])
+		@members = []
+		JoinGroup.all.each do |member|
+			if member.group.id == @group.id && member.state == true
+				@members << member.user
+			end
+		end
 	end
 
 	def new

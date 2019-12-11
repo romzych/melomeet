@@ -12,3 +12,15 @@
 
 <% end %>
 
+<h3>Demande Pour rejoindre le groupe</h3>
+<% if @my_request.length <= 0 %>
+<p>Vous n'avez aucune demande</p>
+<% end %>
+
+<% @my_request.each do |request| %>
+<hr>
+<%= link_to request.user.email, user_path(request.user.id) %> 
+<%= link_to "accepter", join_group_path(request.id), :method=> :put %> 
+<%= link_to "reffuser", join_group_path(request.id), :method=> :delete %> <br><br>
+
+<% end %>

@@ -24,9 +24,15 @@ class JoinGroupsController < ApplicationController
   def show
   end
 
-  def update
+	def update
+		request = JoinGroup.find(params[:id])
+		request.update(state: true)
+		redirect_to root_path
   end
 
-  def destroy
+	def destroy
+		request = JoinGroup.find(params[:id])
+		request.destroy
+		redirect_to root_path
   end
 end
