@@ -43,10 +43,17 @@ class UsersController < ApplicationController
 
 	def show
    @user = User.find(params[:id])
-   puts "#" * 60
-  #  @my_group = 
-   puts Group.find_by(name: "Migos")
-   puts "#" * 60
+   @my_group = []
+   @my_request = []
+  Group.all.each do |group|
+    if group.admin.id == current_user.id
+      @my_group << group
+    end
+  end
+  # JoinGroup.all.each do |request|
+
+  # end
+
 	end
 
 	def new

@@ -2,3 +2,13 @@
 <p>
 	<%= @user.email %>
 </p>
+
+<% if @my_group.length > 0 %>
+	<h3>Groupes que je gere</h3>
+<% end %>
+<% @my_group.each do |group| %>
+
+<p><%= group.name %></p>
+
+<% end %>
+
