@@ -1,3 +1,10 @@
 <h3>Nom du group : <%= @group.name %></p>
 <p>Déscription : <%= @group.body %></p>
 <p>Créateur du groupe : <%= @group.admin.email %></p>
+
+<% if user_signed_in? %>
+
+<%= link_to "rejoindre le gropu",  controller: "join_groups", action: "create", id: @group %>
+
+<% end %>
+
