@@ -19,7 +19,7 @@ class AfterSignupsController < Wicked::WizardController
     private
 
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :speciality_1, :speciality_2)
+      params.require(:user).permit(:first_name, :last_name, :speciality_1)
     end
 
     def redirect_to_finish_wizard

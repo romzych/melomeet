@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_12_05_120203) do
   create_table "groups", force: :cascade do |t|
     t.integer "admin_id"
     t.string "name"
+    t.string "group_spe"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -33,6 +34,7 @@ ActiveRecord::Schema.define(version: 2019_12_05_120203) do
   create_table "join_groups", force: :cascade do |t|
     t.integer "user_id"
     t.integer "group_id"
+    t.boolean "state", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
