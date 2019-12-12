@@ -1,7 +1,16 @@
  <p>Creez votre propre groupe !</p>
 <%= form_for :users, :url => { :action => "create"} do %>
  <span>Name</span>         <%= text_field_tag(:group_name) %><br>
- <span>Déscription</span>       <%= text_field_tag(:group_body) %>
+ <span>Déscription</span>       <%= text_field_tag(:group_body) %><br>
+
+
+ <span>Speciality</span><%= select_tag(:group_spe, options_for_select([
+  ["Select One", ""], 
+  "Rap/Trap/Drill/Alternatif/Hip-Hop", 
+  "Rock/Alternatif/Pop/Metal", 
+  "Pop", 
+  "RnB", 
+  "Electro"])) %>
                             
   <%= submit_tag("s'inscrire") %>
 <% end %> 
