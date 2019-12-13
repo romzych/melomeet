@@ -13,7 +13,10 @@
  *= require_tree .
  *= require_self
  */
+h2 {
+  margin-left: 200px;
 
+}
  body {
    overflow-x: hidden;
  }
@@ -54,3 +57,28 @@
    height: 100px;
    background-color: red;
  }
+
+ .form-group {
+margin-left: 200px;
+}
+
+.wrap-contact2 {
+    width: 790px;
+    background: #D3D3D3;
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 72px 55px 90px 55px;
+}
+.container-contact2 {
+    width: 100%;
+    min-height: 120vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}

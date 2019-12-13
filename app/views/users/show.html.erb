@@ -1,5 +1,6 @@
-<h1>Artist page</h1>
-
+<div class="container-contact2">
+<div class="wrap-contact2">
+<center><h1>Artist page</h1></center>
 <div>
   <% if @user.avatar.attached? %>
     <%= image_tag @user.thumbnail %>
@@ -31,4 +32,9 @@
 	<%= link_to "reffuser", join_group_path(request.id), :method=> :delete %> <br><br>
 
 	<% end %>
+	<a class="btn btn-secondary" href="<%= '/after_signups/personal' %>">Edit your profil</a>
+
 <% end %>
+
+</div>
+</div>
