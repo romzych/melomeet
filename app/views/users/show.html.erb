@@ -1,4 +1,11 @@
 <h1>Artist page</h1>
+
+<div>
+  <% if @user.avatar.attached? %>
+    <%= image_tag @user.thumbnail %>
+  <% end %>
+</div>
+
 <p>
 	<%= @user.email %>
 </p>

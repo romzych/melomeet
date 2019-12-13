@@ -10,6 +10,7 @@
 </div>
 
 <div class="field">
+  <p>Select your speciality</p>
 <%= f.select :speciality_1, options_for_select([
   ["Select One", ""], 
   "Beatmaker", 
@@ -25,5 +26,10 @@
   {}, { class: "form form-group form-control" } %>
 </div>
 
+
+<div class=”field”> 
+    <p>Select your avatar</p>
+  <%= f.file_field :avatar %> </div>
+</div><br/>
 <%= f.submit "Update" %>
 <% end %>
