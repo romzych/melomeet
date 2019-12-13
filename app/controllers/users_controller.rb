@@ -46,7 +46,7 @@ class UsersController < ApplicationController
 		@my_group = []
 		@my_request = []
 		Group.all.each do |group|
-			if group.admin.id == current_user.id
+			if group.admin == current_user
 				@my_group << group
 			end
 		end

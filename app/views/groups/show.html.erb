@@ -9,8 +9,8 @@
 <p><%= member.email %></p>
 <% end %>
 
-<% if user_signed_in? %>
-
+<% if user_signed_in? && @group.admin != current_user && @members_request.select{ |user| user == current_user }.length == 0 && JoinGroup.all.select{ |element| element.user == current_user }.length == 0 %>
+<p><%=  %></p>
 <%= link_to "rejoindre le groupe",  controller: "join_groups", action: "create", id: @group %>
 
 <% end %>
