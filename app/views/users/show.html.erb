@@ -1,6 +1,7 @@
 <div class="container-contact2">
 <div class="wrap-contact2">
-<center><h1>Artist page</h1></center>
+<div class="text-center">
+	<h1>Artist page</h1>
 <div>
   <% if @user.avatar.attached? %>
     <%= image_tag @user.thumbnail %>
@@ -8,7 +9,13 @@
 </div>
 
 <p>
-	<%= @user.email %>
+	Prénom & Nom : <%= @user.first_name %> <%= @user.last_name %>
+</p>
+<p>
+	Contact : <%= @user.email %>
+</p>
+<p>
+	Specialité : <%= @user.speciality_1 %>
 </p>
 <% if @user == current_user %>
 	<% if @my_group.length > 0 %>
@@ -32,9 +39,9 @@
 	<%= link_to "reffuser", join_group_path(request.id), :method=> :delete %> <br><br>
 
 	<% end %>
-	<a class="btn btn-secondary" href="<%= '/after_signups/personal' %>">Edit your profil</a>
-
+	<a class="btn btn-secondary" href="/after_signups/personal">Editer le profile</a>
 <% end %>
 
+</div>
 </div>
 </div>
