@@ -1,15 +1,24 @@
+<div class="container-contact2">
+<div class="wrap-contact2">
+<center><h1>Update your informations</h1></center>
 <%= form_for @user, url: wizard_path, method: :put do |f| %>
-<div class="field">
+<div class="form-group">
+    <div class="col-sm-6">
 	<%= f.label :first_name %><br/>
 	<%= f.text_field :first_name %>
 </div>
+</div>
 
-<div class="field">
+<div class="form-group">
+    <div class="col-sm-6">
 	<%= f.label :last_name %><br/>
 	<%= f.text_field :last_name %>
 </div>
+</div>
 
-<div class="field">
+<div class="form-group">
+    <div class="col-sm-6">
+  <p>Select your speciality</p>
 <%= f.select :speciality_1, options_for_select([
   ["Select One", ""], 
   "Beatmaker", 
@@ -22,8 +31,22 @@
   "Writter",
   "Bass player",
   "Drummer"]), 
-  {}, { class: "form form-group form-control" } %>
+  {}, {} %>
+</div>
 </div>
 
+<div class="form-group">
+    <div class="col-sm-6">
+    <p>Select your avatar</p>
+  <%= f.file_field :avatar %> </div></div>
+<br/>
+
+<div class="form-group">
+    <div class="col-sm-6">
 <%= f.submit "Update" %>
 <% end %>
+</div>
+</div>
+</div>
+</div>
+

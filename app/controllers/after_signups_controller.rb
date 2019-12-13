@@ -8,6 +8,7 @@ class AfterSignupsController < Wicked::WizardController
 
    def update
       @user = current_user
+      @user.avatar.attach(params[:avatar])
       if @user.update_attributes(user_params)
         # because you only have one step, you don't need render_wizard @user
         redirect_to_finish_wizard
@@ -19,7 +20,7 @@ class AfterSignupsController < Wicked::WizardController
     private
 
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :speciality_1)
+      params.require(:user).permit(:first_name, :last_name, :speciality_1, :avatar)
     end
 
     def redirect_to_finish_wizard

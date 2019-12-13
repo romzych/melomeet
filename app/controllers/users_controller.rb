@@ -70,7 +70,7 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		
+
 	end
 
 	def edit
@@ -82,6 +82,6 @@ class UsersController < ApplicationController
 	end
 
 	def destroy
-		
+		#@user.avatar.purge
 	end
 end

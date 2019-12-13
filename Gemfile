@@ -68,3 +68,5 @@ gem 'faker'
 gem 'devise'
 gem 'wicked'
 gem 'dotenv-rails'
+gem "aws-sdk-s3", require: false
+gem 'mini_magick'
