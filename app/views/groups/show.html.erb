@@ -2,7 +2,15 @@
 <p>Déscription : <%= @group.body %></p>
 <p>Créateur du groupe : <%= @group.admin.email %></p>
 
-<% if user_signed_in? %>
+<% if @members.length > 0 %>
+<h3>Membre du groupe</h3>
+<% end %>
+<% @members.each do |member| %>
+<p><%= member.email %></p>
+<% end %>
 
-<%= link_to "rejoindre le group",  controller: "join_groups", action: "create", id: @group %>
+<% if user_signed_in? && @group.admin != current_user && @members_request.select{ |user| user == current_user }.length == 0 && JoinGroup.all.select{ |element| element.user == current_user }.length == 0 %>
+<p><%=  %></p>
+<%= link_to "rejoindre le groupe",  controller: "join_groups", action: "create", id: @group %>
+
 <% end %>

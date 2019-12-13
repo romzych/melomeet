@@ -42,7 +42,27 @@ class UsersController < ApplicationController
 	end
 
 	def show
-	 @user = User.find(params[:id])
+		@user = User.find(params[:id])
+		@my_group = []
+		@my_request = []
+		Group.all.each do |group|
+			if group.admin == current_user
+				@my_group << group
+			end
+		end
+		if @my_group.length > 0
+			JoinGroup.all.each do |request|
+				@my_group.each do |group|
+					# puts "#" * 60
+					# puts group
+					# puts request.group
+					# puts "/" * 60
+					if group.id == request.group.id && request.state == false
+						@my_request << request
+					end
+				end
+			end
+		end
 	end
 
 	def new

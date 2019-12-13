@@ -1,10 +1,6 @@
 class JoinGroupsController < ApplicationController
 	def create
-		puts "#" * 60
 		g = Group.find(params[:id])
-		puts g
-		u = current_user
-		puts u
 		@join_group = JoinGroup.new(user: current_user, group: g)
 		if @join_group.save
 			redirect_to root_path
@@ -28,9 +24,15 @@ class JoinGroupsController < ApplicationController
   def show
   end
 
-  def update
+	def update
+		request = JoinGroup.find(params[:id])
+		request.update(state: true)
+		redirect_to root_path
   end
 
-  def destroy
+	def destroy
+		request = JoinGroup.find(params[:id])
+		request.destroy
+		redirect_to root_path
   end
 end
